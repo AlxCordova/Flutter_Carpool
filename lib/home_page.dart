@@ -1,7 +1,5 @@
-import 'package:carpool/lateral.dart' as prefix0;
-import 'package:carpool/menu_home.dart';
 import 'package:flutter/material.dart';
-import 'package:carpool/lateral.dart';
+import 'package:carpool/driver/trip_page.dart';
 
 class HomePage extends StatelessWidget {
   static String tag = 'home-page';
@@ -9,116 +7,31 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) { 
 
-    final List<String> _listViewData = [
-    'Perfil',
-    'Mensajes',
-    'Solicitudes de viaje',
-    'Configuraciones',
-    'Salir',
-  ];
-
-    final bar = AppBar(
-      
-      // title: Text("Transparent AppBar"),
-      //         backgroundColor: Colors.transparent,
-      //         elevation: 0,
-      //         actions: <Widget>[
-      //           IconButton(
-      //             icon: Icon(Icons.share),
-      //             onPressed: () {},
-      //             tooltip: 'Share',
-      //           ),
-      //         ],
-      // drawer: Theme(
-      //   data: Theme.of(context).copyWith(
-      //     canvasColor: Colors.blue,
-      //   ),
-      //   child: Drawer(
-      //     child: ListView(
-      //       padding: EdgeInsets.all(40.0), //items
-      //       children: _listViewData
-      //           .map((data) => ListTile(
-      //                 title: Text(data, style: TextStyle(color: Colors.white)),
-      //               ))
-      //           .toList(),
-      //     ),
-      //   ),
-      // ),
-    );
-
     final logo = AspectRatio(
     aspectRatio: 1.5, //espacio 
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        // Row(
-        //             mainAxisAlignment: MainAxisAlignment.start,
-        //             mainAxisSize: MainAxisSize.max,
-        //             children: [
-        //               InkWell(
-        //                 child: Icon(Icons.menu, color: Colors.black),
-        //                 onTap: () {
-                        
-        //                 },
-        //               ),
-        //               // Text("My Cards", style: TextStyle(fontSize: 24, color: Colors.white)),
-        //               // Icon(Icons.attach_money, color: Colors.white),
-        //             ],
-        //           ),
         AspectRatio(
           aspectRatio: 2.0, //tamaño 
           child: Stack(
             children: <Widget>[
-                  
               Align(
-          alignment: Alignment.topCenter,
-          child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/home.jpg'),
-                  fit: BoxFit.cover),
-            ),
-          ),
-        ),
-      //   Scaffold(
-      //     appBar: AppBar(backgroundColor: Colors.transparent),
-      //     backgroundColor: Colors.transparent,
-      //     drawer: Theme(
-      //   data: Theme.of(context).copyWith(
-      //     canvasColor: Colors.blue,
-      //   ),
-      //   child: Drawer(
-      //     child: ListView(
-      //       padding: EdgeInsets.all(40.0), //items
-      //       children: _listViewData
-      //           .map((data) => ListTile(
-      //                 title: Text(data, style: TextStyle(color: Colors.white)),
-      //               ))
-      //           .toList(),
-      //     ),
-      //   ),
-      // ),
-      //   )
-              // Container(
-              //   decoration: BoxDecoration(
-              //     image: DecorationImage(
-              //       image: ExactAssetImage('assets/space.jpg'),
-              //       fit: BoxFit.cover,
-              //     )
-              //   ),
-              // )
+                alignment: Alignment.topCenter,
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/home.jpg'),
+                      fit: BoxFit.cover),
+                  ),
+                ),
+              ),
             ],
           ),
         )
       ],
     ),
   );
-
-    // final logo =  ClipRRect(
-    //     borderRadius: BorderRadius.circular(20.0),
-    //     clipBehavior: Clip.hardEdge,
-    //     child: Image.asset('assets/home.jpg'),
-    // );
 
     final riderBtn = Padding(
       padding: EdgeInsets.symmetric(vertical: 10.0),
@@ -132,7 +45,7 @@ class HomePage extends StatelessWidget {
             ),
             color: Color(0xff4B2CB3),//withOpacity(0.95), //Aqua#1DDCB2 Purple #4B2CB3 
             onPressed: () {
-              Navigator.of(context).pushNamed(TransparentDrawer.tag);
+              Navigator.of(context).pushNamed(TripPage.tag);
             },
             child: Text(
               'DAR JALON', 
@@ -176,71 +89,62 @@ class HomePage extends StatelessWidget {
             ),
             color: Color(0xff4B2CB3),//withOpacity(0.95), //Aqua#1DDCB2 Purple #4B2CB3 
             onPressed: () {
-              Navigator.of(context).pushNamed(prefix0.MenuDashboardPage.tag);
+              Navigator.of(context).pushNamed(HomePage.tag);
             },
             child: Text('MIS VIAJES', style: TextStyle(color: Colors.white, fontSize: 18.0)),
           ),
         ),
       ),
-      // padding: EdgeInsets.symmetric(vertical: 10.0),
-      // child: RaisedButton(
-      //   shape: RoundedRectangleBorder(
-      //     borderRadius: BorderRadius.circular(24),
-      //   ),
-      //   onPressed: () {
-      //     Navigator.of(context).pushNamed(HomePage.tag);
-      //   },
-      //   padding: EdgeInsets.all(30), 
-      //   color: Color(0xff4B2CB3),
-      //   child: Text('Button 3', style: TextStyle(color: Colors.white, fontSize: 18.0)),
-      // ),
     );
 
     
     return Scaffold(
-      //title: Text('Home')),
-      // appBar: AppBar(title: Text('HOME')),
-      // drawer: Theme(
-      //   data: Theme.of(context).copyWith(
-      //     canvasColor: Colors.blue,
-      //   ),
-      //   child: Drawer(
-      //     child: ListView(
-      //       padding: EdgeInsets.all(40.0), //items
-      //       children: _listViewData
-      //           .map((data) => ListTile(
-      //                 title: Text(data, style: TextStyle(color: Colors.white)),
-      //               ))
-      //           .toList(),
-      //     ),
-      //   ),
-      // ),
       drawer:new Drawer(
       child: ListView(
         children: <Widget>[
           new UserAccountsDrawerHeader(
-            accountName: Text('EDWIN'),
-            accountEmail: Text('adsfg@asdf.com'),
+            decoration: BoxDecoration(color: Colors.lightBlue.withOpacity(0.50)),
+            margin: EdgeInsets.only(bottom: 40.0),
+            currentAccountPicture: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: NetworkImage("https://revistadiners.pe/wp-content/uploads/2019/05/robertdowneyjr_800x669-1.jpg")
+                ),
+              ),
+            ),
+            accountName: Text(
+              'TONY STARK', style: TextStyle(color: Colors.black, fontSize: 18.0)),
+            accountEmail: Text(
+              'adsfg@asdf.com', style: TextStyle(color: Colors.black, fontSize: 15.0)),
           ),
           new ListTile(
-            title: Text('INICIO'),
+            title: Text(
+              'MENSAJES',
+              style: TextStyle(color: Colors.black, fontSize: 18.0)),
           ),
           new ListTile(
-            title: Text('MENSAJES'),
+            title: Text(
+              'SOLICITUDES DE VIAJE',
+              style: TextStyle(color: Colors.black, fontSize: 18.0)),
+              selected: true,
           ),
           new ListTile(
-            title: Text('CONFIGURACIONES'),
+            title: Text(
+              'CONFIGURACIONES',
+              style: TextStyle(color: Colors.black, fontSize: 18.0)),
           ),
           new ListTile(
-            title: Text('SALIR'),
+            title: Text(
+              'SALIR',
+              style: TextStyle(color: Colors.black, fontSize: 18.0)),
           ),
         ],
       ),
     ),
       body: Center(
         child: ListView(
-          //shrinkWrap: true,
-          //padding: EdgeInsets.only(left: 24.0, right: 24.0), 
           children: <Widget>[
             logo,
             riderBtn,

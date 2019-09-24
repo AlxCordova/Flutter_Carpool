@@ -10,7 +10,7 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
 
-  var _formKey = GlobalKey<FormState>();
+  //var _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +28,12 @@ class _RegisterPageState extends State<RegisterPage> {
     final fname = TextFormField(
       autofocus: false,
       initialValue: '',
-      validator: (String value){
-        if (value.isEmpty){
-          return 'Campo obligatorio';
-        }
-        return null;
-      },
+      // validator: (String value){
+      //   if (value.isEmpty){
+      //     return 'Campo obligatorio';
+      //   }
+      //   return null;
+      // },
       decoration: InputDecoration(
         hintText: 'Nombre',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
@@ -145,7 +145,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        key: _formKey,
+        //key: _formKey,
         child: ListView(
           shrinkWrap: true,
           padding: EdgeInsets.only(left: 24.0, right: 24.0),

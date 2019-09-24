@@ -2,43 +2,64 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'register_page.dart';
 
-class LoginPage extends StatefulWidget {
-  static String tag = 'login-page';
+class Trip2Page extends StatefulWidget {
+  static String tag = 'trip2-page';
   @override
-  _LoginPageState createState() => new _LoginPageState();
+  _Trip2PageState createState() => new _Trip2PageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _Trip2PageState extends State<Trip2Page> {
   @override
   Widget build(BuildContext context) {
-    final logo =  ClipRRect(
-        borderRadius: BorderRadius.circular(0.0),
-        clipBehavior: Clip.hardEdge,
-        child: Image.asset('assets/login2.jpg')
-    );
 
-  final title = Text(
-    'INGRESAR',
-    textAlign: TextAlign.center,
-    style: TextStyle(fontSize: 25.0, 
-    color: Color(0xff1DDCB2),
-    fontFamily: 'Montserrat',
-    fontWeight: FontWeight.bold,
+    final logo = AspectRatio(
+    aspectRatio: 1.9, //espacio derecha
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        AspectRatio(
+          aspectRatio: 2.0, //tamaño img
+          child: Stack(
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  image: DecorationImage(
+                    image: ExactAssetImage('assets/riderInicio.jpg'),
+                    fit: BoxFit.cover,
+                  )
+                ),
+              )
+            ],
+          ),
+        )
+      ],
     ),
   );
+
+    final inicioLabel = new ListTile(
+      title: Text(
+        '¿De dónde sales?',
+        style: TextStyle(color: Colors.black, fontSize: 15.0)),
+    );
 
     final email = Padding(
       padding: EdgeInsets.only(left: 24.0, right: 24.0),
       child: TextFormField(
-      keyboardType: TextInputType.emailAddress,
       autofocus: false,
       initialValue: '',
       decoration: InputDecoration(
-        hintText: 'Correo',
+        hintText: 'Punto de partida',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
       )
+    );
+
+    final finalLabel = new ListTile(
+      title: Text(
+        '¿Hacia dónde viajas?',
+        style: TextStyle(color: Colors.black, fontSize: 15.0)),
     );
 
     final password = Padding(
@@ -48,7 +69,7 @@ class _LoginPageState extends State<LoginPage> {
       initialValue: '',
       obscureText: true,
       decoration: InputDecoration(
-        hintText: 'Contraseña',
+        hintText: 'Punto de llegada',
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
       ),
@@ -91,11 +112,12 @@ class _LoginPageState extends State<LoginPage> {
         child: ListView(
           children: <Widget>[
             logo,
-            SizedBox(height: 60.0),
-            title,
-            SizedBox(height: 10.0),
+            inicioLabel,
+            SizedBox(height: 0.1),
             email,
-            SizedBox(height: 8.0),
+            //SizedBox(height: 0.1),
+            finalLabel,
+            //SizedBox(height: 0.1),
             password,
             SizedBox(height: 15.0),
             loginButton,

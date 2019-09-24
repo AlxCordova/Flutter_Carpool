@@ -46,6 +46,15 @@ flutter:
     - assets/splash.jpg
     - assets/home.jpg
     - assets/space.jpg
+    - assets/car.jpg
+    - assets/driver2.jpg
+    - assets/final.jpg
+    - assets/login2.jpg
+    - assets/rider.jpg
+    - assets/riderFinal.jpg
+    - assets/riderInicio.jpg
+    - assets/trips.jpg
+    - assets/user.jpg
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

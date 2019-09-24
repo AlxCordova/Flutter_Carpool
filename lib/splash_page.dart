@@ -73,20 +73,6 @@ Widget build(BuildContext context) {
         ),
       ),
     );
-    // final goButton = Padding(
-    //   padding: EdgeInsets.symmetric(vertical: 30.0),
-    //   child: RaisedButton(
-    //     shape: RoundedRectangleBorder(
-    //       borderRadius: BorderRadius.circular(24),
-    //     ),
-    //     onPressed: () {
-    //       Navigator.of(context).pushNamed(LoginPage.tag);
-    //     },
-    //     padding: EdgeInsets.all(12),
-    //     color: Color(0xff2B55A8).withOpacity(0.95),
-    //     child: Text('EMPECEMOS', style: TextStyle(color: Colors.white)),
-    //   ),
-    // );
 
     final body = Container(
           width: MediaQuery.of(context).size.width,
@@ -105,95 +91,5 @@ Widget build(BuildContext context) {
     return Scaffold(
       body: body,
     );
-    // return Scaffold(
-    //   body: AspectRatio(
-    //     aspectRatio: 0.75, //espacio derecha
-    //     child: Column(
-    //       children: <Widget>[
-    //         AspectRatio(
-    //           aspectRatio: 0.95, //tamaño img
-    //           child: Stack(
-    //             children: <Widget>[
-    //               Container(
-    //                 decoration: BoxDecoration(
-    //                   image: DecorationImage(
-    //                     image: ExactAssetImage('assets/splash.jpg'),
-    //                     fit: BoxFit.cover,
-    //                   ),
-    //                 ),
-    //               ),
-    //             ],
-    //           ),
-    //         ),
-    //         AspectRatio(
-    //           aspectRatio: 5.8 / 2 ,
-    //           child: Container(
-    //             child: Center(
-    //               child: Padding(
-    //                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 0),
-    //                 child: Column(
-    //                   children: <Widget>[
-    //                   Padding(
-    //                     padding: EdgeInsets.only(top: 200.0),
-    //                   ),
-    //                   Text(
-    //                     'Bienvenido a GO',
-    //                     style: TextStyle(
-    //                       color: Colors.black,
-    //                       fontSize: 24.0,
-    //                       fontWeight: FontWeight.bold),
-    //                   ),
-    //                   Padding(
-    //                     padding: EdgeInsets.only(top: 15.0),
-    //                   ),
-    //                   Text(
-    //                   'GO te ayuda a compartir tu viaje\n con otras personas ahorrando\n tiempo y dinero.',
-    //                   textAlign: TextAlign.center,
-    //                   style: TextStyle(
-    //                     color: Colors.black,
-    //                     fontSize: 18.0,
-    //                     fontWeight: FontWeight.bold),
-    //                 ),
-    //                 ],
-    //                 ),
-    //               ),
-    //             ),
-    //           ),
-    //         ),
-    //         AspectRatio(
-    //           aspectRatio: 7.0,
-    //           child: Center(
-    //               child: Container(
-    //             width: 280.0,
-    //             height: 80.0,
-
-    //             //
-    //             child:
-
-    //                 //here is the button
-    //                 RaisedButton(
-    //               color: Color(0xff2B55A8).withOpacity(0.95),
-    //               onPressed: () {
-    //                 Navigator.of(context).pushNamed(LoginPage.tag);
-    //                 //SystemChannels.textInput.invokeMethod('TextInput.reload');
-    //               },
-    //               child: const Text(
-    //                 'GET STARTED',
-    //                 style: TextStyle(
-    //                   color: Colors.white,
-    //                   fontSize: 16.5,
-    //                 ),
-    //               ),
-    //               shape: RoundedRectangleBorder(
-    //                 borderRadius: BorderRadius.circular(12),
-    //               ),
-    //               // the end of the button
-    //             ),
-    //           )),
-    //         ),
-    //       ],
-    //     ),
-    //   ),
-    // );
   }
 }

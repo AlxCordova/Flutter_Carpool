@@ -1,3 +1,4 @@
+import 'package:carpool/user/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:carpool/driver/trip_page.dart';
 
@@ -70,7 +71,7 @@ class HomePage extends StatelessWidget {
             ),
             color: Color(0xff4B2CB3),//withOpacity(0.95), //Aqua#1DDCB2 Purple #4B2CB3 
             onPressed: () {
-              Navigator.of(context).pushNamed(HomePage.tag);
+              Navigator.of(context).pushNamed(SearchPage.tag);
             },
             child: Text('PEDIR JALON', style: TextStyle(color: Colors.white, fontSize: 18.0)), //cambiar child por label
           ),

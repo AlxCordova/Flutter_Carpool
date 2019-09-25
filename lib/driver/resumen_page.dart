@@ -72,7 +72,7 @@ class _ResumenPageState extends State<ResumenPage> {
             onPressed: () {
               Navigator.of(context).pushNamed(FinalRidePage.tag);
             },
-            child: Text('FINALIZAR', style: TextStyle(color: Colors.white, fontSize: 18.0)),
+            child: Text('PUBLICAR', style: TextStyle(color: Colors.white, fontSize: 18.0)),
           ),
         ),
       ),

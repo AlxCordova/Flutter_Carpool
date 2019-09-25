@@ -8,6 +8,7 @@ import './driver/trip_page.dart';
 import './driver/trip2_page.dart';
 import './driver/resumen_page.dart';
 import './driver/final_page.dart';
+import 'package:carpool/user/search_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
     RiderPage.tag: (context) => RiderPage(),
     ResumenPage.tag: (context) => ResumenPage(),
     FinalRidePage.tag: (context) => FinalRidePage(),
+    SearchPage.tag: (context) => SearchPage(),
   };
 
   @override

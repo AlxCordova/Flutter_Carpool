@@ -1,16 +1,60 @@
+import 'package:carpool/driver/addCar_page.dart';
 import 'package:flutter/material.dart';
 import 'package:carpool/driver/trip2_page.dart';
 
 class TripPage extends StatefulWidget {
   static String tag = 'trip-page';
+  
   @override
   _TripPageState createState() => new _TripPageState();
+}
+
+class Dialogs {
+  addCar(BuildContext context, String title, String description){
+    return showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context){
+        return AlertDialog(
+          title: Text(title),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text(description)
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            FlatButton(
+              onPressed: () => _addCar(false, context),
+              child: Text('CANCELAR'),
+            ),
+            FlatButton(
+              onPressed: () => _addCar(true, context),
+              child: Text('AÑADIR'),
+            )
+          ],
+        );
+      }
+    );
+  }  
+}
+
+_addCar(bool isAdd, BuildContext context){
+    if(isAdd){
+      Navigator.of(context).pushNamed(AddCarPage.tag);
+    } else {
+      Navigator.pop(context);
+    }
 }
 
 class _TripPageState extends State<TripPage> {
 
   final TextEditingController controller = new TextEditingController();
 
+  Dialogs dialogs = new Dialogs();
+
+  String title;
   String result = "";
 
   @override
@@ -109,6 +153,25 @@ class _TripPageState extends State<TripPage> {
       ),
     );
 
+    final dialogBtn = Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(Icons.assignment_late),
+              color: Colors.red,
+              iconSize: (30.0),
+              onPressed: () {
+                dialogs.addCar(context, 'AÑADE UN AUTO', 'Añade un vehiculo antes\n de publicar tu primer viaje');
+              },
+            )
+          ],
+        )
+      ],
+    );
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
@@ -123,6 +186,7 @@ class _TripPageState extends State<TripPage> {
             endPoint,
             SizedBox(height: 30.0),
             waypoints,
+            dialogBtn,
             //SizedBox(height: 0.5),            
           ],
         ),

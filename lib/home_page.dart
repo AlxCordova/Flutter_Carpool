@@ -63,7 +63,8 @@ class HomePage extends StatelessWidget {
         child: Container(
           width: 250.0,
           height: 80.0,
-          child: RaisedButton(
+          child: RaisedButton( //.icon
+            //icon: Icon(Icons.airport_shuttle, color: Colors.white, size: 50.0,),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.0)
             ),
@@ -71,7 +72,7 @@ class HomePage extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pushNamed(HomePage.tag);
             },
-            child: Text('PEDIR JALON', style: TextStyle(color: Colors.white, fontSize: 18.0)),
+            child: Text('PEDIR JALON', style: TextStyle(color: Colors.white, fontSize: 18.0)), //cambiar child por label
           ),
         ),
       ),

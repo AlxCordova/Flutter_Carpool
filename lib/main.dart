@@ -5,7 +5,9 @@ import 'login-page.dart';
 import 'register_page.dart';
 import 'home_page.dart';
 import './driver/trip_page.dart';
-//import 'trip2_page.dart';
+import './driver/trip2_page.dart';
+import './driver/resumen_page.dart';
+import './driver/final_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,6 +18,9 @@ class MyApp extends StatelessWidget {
     RegisterPage.tag: (context) => RegisterPage(),
     HomePage.tag: (context) => HomePage(),
     TripPage.tag: (context) => TripPage(),
+    RiderPage.tag: (context) => RiderPage(),
+    ResumenPage.tag: (context) => ResumenPage(),
+    FinalRidePage.tag: (context) => FinalRidePage(),
   };
 
   @override

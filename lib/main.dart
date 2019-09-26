@@ -10,6 +10,7 @@ import './driver/resumen_page.dart';
 import './driver/final_page.dart';
 import './user/search_page.dart';
 import './driver/addCar_page.dart';
+import './user/results_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
     FinalRidePage.tag: (context) => FinalRidePage(),
     SearchPage.tag: (context) => SearchPage(),
     AddCarPage.tag: (context) => AddCarPage(),
+    ResultsPage.tag: (context) => ResultsPage(),
   };
 
   @override
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Carpool',
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: ResultsPage(),
       routes: routes,
     );
   }

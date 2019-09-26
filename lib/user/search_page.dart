@@ -1,4 +1,4 @@
-import 'package:carpool/home_page.dart';
+import 'package:carpool/user/results_page.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -127,7 +127,7 @@ class _SearchPageState extends State<SearchPage> {
             ),
             color: Color(0xff4B2CB3),
             onPressed: () {
-              Navigator.of(context).pushNamed(HomePage.tag);
+              Navigator.of(context).pushNamed(ResultsPage.tag);
             },
             child: Text('BUSCAR', style: TextStyle(color: Colors.white, fontSize: 18.0)),
           ),

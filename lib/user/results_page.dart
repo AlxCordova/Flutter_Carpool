@@ -1,4 +1,4 @@
-import 'package:carpool/home_page.dart';
+import 'package:carpool/user/finalUser_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -35,7 +35,7 @@ class _ResultsPageState extends State<ResultsPage> {
                    Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(content,
-                      style: TextStyle(color: Colors.black, fontSize: 20.0), //color title
+                      style: TextStyle(color: Colors.black, fontSize: 20.0), //color content
                     ),
                   ),
                   Material(
@@ -49,7 +49,7 @@ class _ResultsPageState extends State<ResultsPage> {
                         ),
                         color: Color(0xff4B2CB3),
                         onPressed: () {
-                          Navigator.of(context).pushNamed(HomePage.tag);
+                          Navigator.of(context).pushNamed(FinalUserPage.tag);
                         },
                         child: Text('RESERVAR', style: TextStyle(color: Colors.white, fontSize: 18.0)),
                       ),
@@ -101,10 +101,8 @@ class _ResultsPageState extends State<ResultsPage> {
         ],
     );
 
-
     return Scaffold(
-      body: 
-      result,
+      body: result,
     );
   }
 }

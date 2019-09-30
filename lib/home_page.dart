@@ -1,3 +1,4 @@
+import 'package:carpool/mytrips_page.dart';
 import 'package:carpool/user/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:carpool/driver/trip_page.dart';
@@ -14,7 +15,7 @@ class HomePage extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         AspectRatio(
-          aspectRatio: 2.0, //tamaño 
+          aspectRatio: 1.5, //tamaño 
           child: Stack(
             children: <Widget>[
               Align(
@@ -91,7 +92,7 @@ class HomePage extends StatelessWidget {
             ),
             color: Color(0xff4B2CB3),//withOpacity(0.95), //Aqua#1DDCB2 Purple #4B2CB3 
             onPressed: () {
-              Navigator.of(context).pushNamed(HomePage.tag);
+              Navigator.of(context).pushNamed(MyTripsPage.tag);
             },
             child: Text('MIS VIAJES', style: TextStyle(color: Colors.white, fontSize: 18.0)),
           ),
